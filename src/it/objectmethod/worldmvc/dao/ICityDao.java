@@ -9,12 +9,6 @@ public interface ICityDao {
 
 	public City getCityByName(String cityName);
 
-	public List<Country> getCountryByName(String countryName, String continent);
-
-	public List<String> getContinent();
-
-	public List<Country> getCountryByContinent(String continent);
-
 	public List<City> getCityByCountryCode(String countryCode);
 
 }

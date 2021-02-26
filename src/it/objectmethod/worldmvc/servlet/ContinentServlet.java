@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.objectmethod.worldmvc.dao.ICityDao;
-import it.objectmethod.worldmvc.dao.impl.CityDaoImpl;
+import it.objectmethod.worldmvc.dao.ICountryDao;
+import it.objectmethod.worldmvc.dao.impl.CountryDaoImpl;
 
 @WebServlet("/continent")
 public class ContinentServlet extends HttpServlet {
@@ -19,8 +19,8 @@ public class ContinentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		List<String> list = new ArrayList<>();
-		ICityDao cityDao = new CityDaoImpl();
-		list = cityDao.getContinent();
+		ICountryDao countryDao = new CountryDaoImpl();
+		list = countryDao.getContinent();
 		req.setAttribute("continentList", list);
 		req.getRequestDispatcher("pages/index-3.jsp").forward(req, resp);
 	}
